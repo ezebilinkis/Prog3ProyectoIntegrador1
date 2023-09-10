@@ -1,9 +1,9 @@
-footer {
+.Titulo {
     background-color: black;
     border-radius: 10px;
     color: white;
     text-align: center;
     padding: 10px;
     font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 30px;
   }

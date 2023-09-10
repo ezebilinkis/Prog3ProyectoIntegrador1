@@ -1,5 +1,6 @@
-import './Cantantes.css'
-function Cantantes(props) {
+// Album.js
+import './Albumes.css'
+function Albumes(props) {
 
     
     return(
@@ -13,4 +14,4 @@ function Cantantes(props) {
     )
 }
 
-export default Cantantes
+export default Albumes

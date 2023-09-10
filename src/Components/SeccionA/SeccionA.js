@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import Cantantes from "../Cantantes/Cantantes";
+import './SeccionA.css'
 class secciona extends Component{
 
     constructor(){
@@ -30,6 +31,7 @@ class secciona extends Component{
         console.log(this.state.cantantes);
         return(
             <section>
+                <h1 className="Titulo">Artistas más populares</h1>
                 <section className="section">
                     {
                         this.state.cantantes.map((elm, idx) => <Cantantes key={idx} nombre={elm.name} imagen={elm.picture}  />)
