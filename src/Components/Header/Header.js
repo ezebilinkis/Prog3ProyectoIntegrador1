@@ -7,7 +7,7 @@ function Header() {
     <header>
       <nav>
         <div className='logo'>
-          <img src="./img/logo.jpg" alt="" />
+          <img className='foto' src="./img/deezer.jpg" alt="" />
         </div>
         <ul>
         <li><Link to='/'>Home</Link></li>

@@ -33,3 +33,8 @@ header {
   nav a:hover {
     color: black;
 }
+.foto{
+  max-width: 150px;
+  max-height: 120px;
+  padding: 20px;
+}
