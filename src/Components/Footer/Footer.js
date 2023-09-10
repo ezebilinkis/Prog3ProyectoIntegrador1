@@ -1,7 +1,8 @@
+import './Footer.css'
 function footer () {
     return(
         <footer>
-            <p>Bilinkis, Rombola y Villanueva</p>
+            <div><p>Bilinkis, Rombola y Villanueva</p></div>
         </footer>
     )
 }
