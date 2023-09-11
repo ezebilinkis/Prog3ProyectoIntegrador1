@@ -22,10 +22,10 @@ class Canciones extends Component {
     }
     render(){
         return(
-            <article>
-                <img src={this.props.imagen} alt=""></img>
-                <p>{this.props.nombre}</p>
-                <p>{this.props.descripcion}</p>
+            <article className='acancion'>
+                <img className='imgcancion' src={this.props.imagen} alt=""></img>
+                <p className='pcancion'>{this.props.nombre}</p>
+                <p className='pcancion'>{this.props.descripcion}</p>
                 
                 <button><Link to={`detalleCancion/${this.props.id}`}>Detalle</Link></button>
                 {
@@ -34,7 +34,7 @@ class Canciones extends Component {
                     :
                     <>
                         <button className='bton' onClick={()=> this.verMenos()} >Ver menos</button>
-                        <p>Song by: {this.props.artista} </p>
+                        <p className='pcancion'>Song by: {this.props.artista} </p>
                     </>
                     
                 }

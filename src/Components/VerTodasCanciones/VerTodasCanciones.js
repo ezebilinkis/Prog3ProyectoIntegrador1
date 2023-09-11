@@ -23,7 +23,7 @@ class VerTodasCanciones extends Component{
             backup: data.albums.data,
             canciones: data.tracks.data,
             backupB: data.tracks.data.slice,
-            index: this.state.index + 10
+            index: this.state.index
         }) )
         .catch(e => console.log(e))
     }

@@ -1,22 +1,29 @@
-.aalbum {
+.sectiondetalle {
     background-color: black;
     border-radius: 10px;
-    color: rgb(255, 255, 255);
-    text-align: center;
     padding: 20px;
-    margin: 10px;
-  }
-
-.palbum {
-    margin: 10px 0;
-  }
-
-.imgalbum {
-    max-width: 100%;
-    border-radius: 10px;
+    text-align: center;
+    color: white;
+    font-family: "Arial", sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
   }
   
-button {
+  .h1detalle {
+    font-size: 24px;
+  }
+  
+  .fotodetalle {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  .pdetalle {
+    margin: 10px 0;
+  }
+  
+.botondetalle {
     background-color: red;
     color: black;
     border: none;

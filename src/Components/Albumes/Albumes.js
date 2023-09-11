@@ -24,19 +24,19 @@ class Albumes extends Component {
     }
     render(){
         return(
-            <article>
-                <img src={this.props.imagen} alt=""></img>
+            <article className='aalbum'>
+                <img className='imgalbum' src={this.props.imagen} alt=""></img>
                 <p>{this.props.nombre}</p>
                 <p>{this.props.descripcion}</p>
                 
-                <button><Link to={`detalleAlbum/${this.props.id}`}>Detalle</Link></button>
+                <button className='bton'><Link to={`detalleAlbum/${this.props.id}`}>Detalle</Link></button>
                 {
                     this.state.ver === false? 
                     <button className='bton' onClick={()=> this.verMas()} >Ver mas</button>
                     :
                     <>
                         <button className='bton' onClick={()=> this.verMenos()} >Ver menos</button>
-                        <p>Album by: {this.props.artista} </p>
+                        <p className='palbum'>Album by: {this.props.artista} </p>
                     </>
                     
                 }

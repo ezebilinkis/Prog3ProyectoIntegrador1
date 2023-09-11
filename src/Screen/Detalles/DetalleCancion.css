@@ -1,22 +1,30 @@
-.aalbum {
+.sectioncancion {
     background-color: black;
     border-radius: 10px;
-    color: rgb(255, 255, 255);
-    text-align: center;
     padding: 20px;
-    margin: 10px;
+    text-align: center;
+    color: white;
+    font-family: "Arial", sans-serif;
+    max-width: 600px;
+    margin: 20px auto;
   }
-
-.palbum {
-    margin: 10px 0;
+  .h1cancion {
+    font-size: 24px;
   }
-
-.imgalbum {
+  .imgcancion {
     max-width: 100%;
     border-radius: 10px;
+    margin: 20px 0;
   }
-  
-button {
+  .pcancion {
+    margin: 10px 0;
+  }
+  iframe {
+    width: 80%;
+    height: 200px;
+    border: none;
+  }
+  .botondetalle {
     background-color: red;
     color: black;
     border: none;
@@ -26,7 +34,6 @@ button {
     cursor: pointer; 
     text-decoration: none;
   }
-  
 button:hover {
     background-color: #ffffff;
   }
