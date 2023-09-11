@@ -10,7 +10,8 @@ class secciona extends Component{
             cantantes: [],
             backupB: [],
             albums: [],
-            backup: []
+            backup: [],
+            canciones: []
         }
     }
     componentDidMount(){
@@ -21,7 +22,8 @@ class secciona extends Component{
             cantantes: data.artists.data.slice(0,5),
             backupB: data.artists.data.slice(0,5),
             albums: data.albums.data.slice(0,5),
-            backup: data.albums.data.slice(0,5)
+            backup: data.albums.data.slice(0,5),
+            canciones: data.tracks.data.slice(0,5)
         }))
         .catch(e => console.log(e))
     }
@@ -30,6 +32,8 @@ class secciona extends Component{
     }
     render(){
         console.log(this.state.albums);
+        console.log(this.state.cantantes);
+        console.log(this.state.canciones);
         return(
             <section>
                 <h2 className="Titulo">Artistas más populares</h2>
