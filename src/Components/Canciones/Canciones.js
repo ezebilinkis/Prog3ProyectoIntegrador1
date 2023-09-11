@@ -1,9 +1,7 @@
-// Album.js
-import './Albumes.css'
-import {Component} from 'react'
+import './Canciones.css'
+import { Component } from 'react';
 
-
-class Albumes extends Component {
+class Canciones extends Component {
 
     constructor(props){
         super(props);
@@ -36,7 +34,7 @@ class Albumes extends Component {
                     :
                     <>
                         <button className='bton' onClick={()=> this.verMenos()} >Ver menos</button>
-                        <p>Album by: {this.props.artista} </p>
+                        <p>Song by: {this.props.artista} </p>
                     </>
                     
                 }
@@ -48,4 +46,4 @@ class Albumes extends Component {
     
 }
 
-export default Albumes
+export default Canciones
