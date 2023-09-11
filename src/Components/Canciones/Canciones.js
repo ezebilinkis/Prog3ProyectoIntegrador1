@@ -1,6 +1,6 @@
 import './Canciones.css'
 import { Component } from 'react';
-
+import {Link} from 'react-router-dom'
 class Canciones extends Component {
 
     constructor(props){
@@ -27,7 +27,7 @@ class Canciones extends Component {
                 <p>{this.props.nombre}</p>
                 <p>{this.props.descripcion}</p>
                 
-                <button>Detalle</button>
+                <button><Link to={`detalleCancion/${this.props.id}`}>Detalle</Link></button>
                 {
                     this.state.ver === false? 
                     <button className='bton' onClick={()=> this.verMas()} >Ver mas</button>

@@ -1,7 +1,7 @@
 // Album.js
 import './Albumes.css'
 import {Component} from 'react'
-
+import {Link} from 'react-router-dom'
 
 class Albumes extends Component {
 
@@ -29,7 +29,7 @@ class Albumes extends Component {
                 <p>{this.props.nombre}</p>
                 <p>{this.props.descripcion}</p>
                 
-                <button>Detalle</button>
+                <button><Link to={`detalleAlbum/${this.props.id}`}>Detalle</Link></button>
                 {
                     this.state.ver === false? 
                     <button className='bton' onClick={()=> this.verMas()} >Ver mas</button>

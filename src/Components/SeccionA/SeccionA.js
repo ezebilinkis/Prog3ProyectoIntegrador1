@@ -15,7 +15,7 @@ class secciona extends Component{
     }
     componentDidMount(){
         console.log('Monto');
-        fetch('https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart')
+        fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart')
         .then(res => res.json())
         .then( data => this.setState({
             albums: data.albums.data.slice(0,5),
@@ -29,20 +29,19 @@ class secciona extends Component{
 
     }
     render(){
-        console.log(this.state.canciones);
         return(
             <section>
                 <h2 className="Titulo">Canciones más populares</h2>
                 <section className="section">
                     {
-                        this.state.canciones.map((elm, idx) => <Cantantes key={idx} nombre={elm.title} imagen={elm.album.cover}  artista={elm.artist.name}/>)
+                        this.state.canciones.map((elm, idx) => <Cantantes key={idx} nombre={elm.title} imagen={elm.album.cover}  artista={elm.artist.name} id={elm.id}/>)
                     } 
                 </section>
                 <br/>
                 <h2 className="Titulo">Albumes más populares</h2>
                 <section className="section">
                     {
-                        this.state.albums.map((elm, idx) => <Albumes key={idx} nombre={elm.title} imagen={elm.cover} artista={elm.artist.name} />)
+                        this.state.albums.map((elm, idx) => <Albumes key={idx} nombre={elm.title} imagen={elm.cover} artista={elm.artist.name} id={elm.id} />)
                     } 
                 </section>
             </section>
