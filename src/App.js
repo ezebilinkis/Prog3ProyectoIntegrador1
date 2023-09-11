@@ -5,7 +5,7 @@ import Footer from './Components/Footer/Footer';
 /* import ResultadosBusqueda from "./Screen/ResultadosBusqueda/ResultadosBusqueda"; */
 import detalleAlbum from "./Screen/Detalles/DetalleAlbum";
 import detalleCancion from "./Screen/Detalles/DetalleCancion";
-
+import verTodas from "./Screen/VerTodas/vertodas";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path={'/'} exact={true} component={Home} />
         <Route path={'/detalleAlbum/:id'} component={detalleAlbum} />
         <Route path={'/detalleCancion/:id'} component={detalleCancion} />
+        <Route path={'/vertodas'} component={verTodas} />
       </Switch>
       <Footer/>
     </div>

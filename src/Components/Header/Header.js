@@ -12,7 +12,7 @@ function Header() {
         <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/favoritos'>Favoritos</Link></li>
-        <li><Link to='/vertodas'>Ver todas</Link></li>
+        <li><Link to='/vertodas'>Ver más canciones</Link></li>
         </ul>
       </nav>
     </header>
