@@ -9,6 +9,7 @@ function Cantantes(props) {
             <p>{props.descripcion}</p>
             <button>Ver mas</button>
             <button>Detalle</button>
+            <button><i class="fa-solid fa-heart"></i></button>
         </article>
     )
 }
