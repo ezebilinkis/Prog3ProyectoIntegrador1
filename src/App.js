@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer';
 import detalleAlbum from "./Screen/Detalles/DetalleAlbum";
 import detalleCancion from "./Screen/Detalles/DetalleCancion";
 import verTodas from "./Screen/VerTodas/vertodas";
+import Favoritos from "./Screen/Favoritos";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Route path={'/detalleAlbum/:id'} component={detalleAlbum} />
         <Route path={'/detalleCancion/:id'} component={detalleCancion} />
         <Route path={'/vertodas'} component={verTodas} />
+        <Route path={'/favoritos'} component={Favoritos} />
+
       </Switch>
       <Footer/>
     </div>
