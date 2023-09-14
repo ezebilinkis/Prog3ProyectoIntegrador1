@@ -25,9 +25,9 @@ class detalleAlbum extends Component {
             let arrParseado = JSON.parse(storageFav)
     
             if(arrParseado !== null){
-              let estaMiPersonaje = arrParseado.includes(this.state.album.id)
+              let albumEsFav = arrParseado.includes(this.state.album.id)
     
-              if(estaMiPersonaje){
+              if(albumEsFav){
                 this.setState({
                   esFavorito: true
                 })
