@@ -7,3 +7,9 @@
     font-family: Arial, sans-serif;
     font-size: 30px;
   }
+
+  @media (max-width:391px){
+    .Titulo{
+      max-width: 50vh;
+    }
+  }

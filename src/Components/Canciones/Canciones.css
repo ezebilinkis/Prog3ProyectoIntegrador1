@@ -5,6 +5,7 @@
     text-align: center;
     padding: 20px;
     margin: 10px;
+    max-width: 200px;
   }
 
 .pcancion {
@@ -30,4 +31,13 @@ button {
   
 button:hover {
     background-color: #ffffff;
+  }
+
+  @media (max-width:391px){
+    .acancion{
+      width: 30vh;
+    }
+    .imgcancion{
+      width: 30vh;
+    }
   }
