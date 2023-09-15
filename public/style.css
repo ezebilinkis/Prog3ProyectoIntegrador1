@@ -2,3 +2,44 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f0f0f0; /* Fondo gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Margen inferior para separar formularios */
+    justify-content: center;
+  }
+  
+  /* Estilos para la etiqueta */
+  label {
+    font-weight: bold;
+    margin-right: 10px; /* Espacio a la derecha de la etiqueta */
+  }
+  
+  /* Estilos para el input de texto */
+  input[type="text"] {
+    padding: 5px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 3px; /* Bordes redondeados */
+    outline: none; /* Quita el borde enfocado */
+  }
+  
+  /* Estilos para el botón de envío */
+  input[type="submit"] {
+    background-color: #ff9800; /* Color de fondo */
+    color: white; /* Color de texto */
+    border: none; /* Quita el borde */
+    border-radius: 3px; /* Bordes redondeados */
+    padding: 5px 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+  }
+  
+  /* Estilos para el botón de envío al pasar el ratón por encima */
+  input[type="submit"]:hover {
+    background-color: #ffa726; /* Cambia el color de fondo al pasar el ratón por encima */
+  }
+  
