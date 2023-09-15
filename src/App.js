@@ -8,7 +8,7 @@ import detalleCancion from "./Screen/Detalles/DetalleCancion";
 import Favoritos from "./Screen/Favoritos";
 import VerTodosAlbums from "./Screen/VerTodos/VerTodos";
 import verTodas from "./Screen/VerTodasCanciones/verTodas.Canciones";
-
+import NotFound from "./Screen/NotFound"
 
 
 function App() {
@@ -22,6 +22,8 @@ function App() {
         <Route path={'/verTodasCanciones'} component={verTodas} />
         <Route path={'/verTodosAlbums'} component={VerTodosAlbums} />
         <Route path={'/favoritos'} component={Favoritos} />
+        <Route path={''} component={NotFound} />
+
 
       </Switch>
       <Footer/>
