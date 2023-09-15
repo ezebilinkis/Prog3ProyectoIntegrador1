@@ -47,7 +47,8 @@ class VerTodasCanciones extends Component{
     render(){
         return (
             <section>
-                {this.state.canciones !== ''?
+                {
+                this.state.canciones !== ''?
                 <>
                 <h2 className="Titulo">Todas las canciones</h2>
                 <Filtro filtrar={(textoAFiltrar)=>this.filtrar(textoAFiltrar)} />

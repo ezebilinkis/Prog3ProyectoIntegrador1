@@ -21,7 +21,7 @@ class detalleAlbum extends Component {
             album: data
         }, ()=> {
 
-            let storageFav =  localStorage.getItem('favoritos')
+            let storageFav =  localStorage.getItem('FavAlbums')
             let arrParseado = JSON.parse(storageFav)
     
             if(arrParseado !== null){
@@ -39,27 +39,27 @@ class detalleAlbum extends Component {
 
     }
 agregarAFavoritos(albumId){         //cambiar nombre de var
-    let storageFav = localStorage.getItem('favoritos')
+    let storageFav = localStorage.getItem('FavAlbums')
       if(storageFav === null){
         let arrIds = [albumId]
         let arrStringificado = JSON.stringify(arrIds)
-        localStorage.setItem('favoritos', arrStringificado)
+        localStorage.setItem('FavAlbums', arrStringificado)
       } else {
         let arrParseado = JSON.parse(storageFav)
         arrParseado.push(albumId)
         let arrStringificado = JSON.stringify(arrParseado)
-        localStorage.setItem('favoritos', arrStringificado)
+        localStorage.setItem('FavAlbums', arrStringificado)
       }
       this.setState({
         esFavorito: true
       })
 }
 sacarDeFavoritos(albumId){ //eliminar valor que recibo como parametro
-    let storageFav = localStorage.getItem('favoritos')
+    let storageFav = localStorage.getItem('FavAlbums')
     let arrParseado = JSON.parse(storageFav)
     let eliminarFavs = arrParseado.filter((id) => id !== albumId) // (solo me quedo con los Id distintos al que recibi como parametro)
     let arrStringificado = JSON.stringify(eliminarFavs)
-    localStorage.setItem('favoritos', arrStringificado)
+    localStorage.setItem('FavAlbums', arrStringificado)
     this.setState({
       esFavorito: false
     })
