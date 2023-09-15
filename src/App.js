@@ -5,7 +5,7 @@ import Footer from './Components/Footer/Footer';
 /* import ResultadosBusqueda from "./Screen/ResultadosBusqueda/ResultadosBusqueda"; */
 import detalleAlbum from "./Screen/Detalles/DetalleAlbum";
 import detalleCancion from "./Screen/Detalles/DetalleCancion";
-import Favoritos from "./Screen/Favoritos";
+import Favoritos from "./Screen/Favoritos/index";
 import VerTodosAlbums from "./Screen/VerTodos/VerTodos";
 import verTodas from "./Screen/VerTodasCanciones/verTodas.Canciones";
 import NotFound from "./Screen/NotFound"
