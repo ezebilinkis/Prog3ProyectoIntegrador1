@@ -8,47 +8,16 @@ class CancionesFav extends Component {
         this.state = {
             ver: false,
             props: props,
-            esFavorito: false
         }
     }
-    componentDidMount(){
-        let storageFav =  localStorage.getItem('FavCanciones')
-            let arrParseado = JSON.parse(storageFav)
     
-            if(arrParseado !== null){
-              let estaCancionEnFav = arrParseado.includes(this.props.id)
-    
-              if(estaCancionEnFav){
-                this.setState({
-                  esFavorito: true
-                })
-              }}
-    }
-    agregarAFavoritos(cancionId){         
-        let storageFav = localStorage.getItem('FavCanciones')
-          if(storageFav === null){
-            let arrIds = [cancionId]
-            let arrStringificado = JSON.stringify(arrIds)
-            localStorage.setItem('FavCanciones', arrStringificado)
-          } else {
-            let arrParseado = JSON.parse(storageFav)
-            arrParseado.push(cancionId)
-            let arrStringificado = JSON.stringify(arrParseado)
-            localStorage.setItem('FavCanciones', arrStringificado)
-          }
-          this.setState({
-            esFavorito: true
-          })
-    }
     sacarDeFavoritos(cancionId){ //eliminar valor que recibo como parametro
         let storageFav = localStorage.getItem('FavCanciones')
         let arrParseado = JSON.parse(storageFav)
         let eliminarFavs = arrParseado.filter((id) => id !== cancionId) // (solo me quedo con los Id distintos al que recibi como parametro)
         let arrStringificado = JSON.stringify(eliminarFavs)
         localStorage.setItem('FavCanciones', arrStringificado)
-        this.setState({
-          esFavorito: false
-        })
+        this.state.props.sacarFav(cancionId)
       }
     verMas() {
         this.setState({
@@ -78,14 +47,11 @@ class CancionesFav extends Component {
                     </>
                     
                 }
-                {
-              this.state.esFavorito ?
+                
+              
               <button onClick={()=> this.sacarDeFavoritos(this.props.id)} ><i className="fa-solid fa-heart"></i></button>
 
-              :
-              <button onClick={()=> this.agregarAFavoritos(this.props.id)} className='botondetalle'><i className= "fa-regular fa-heart"></i></button>
-
-            }
+              
             </article>
         )
     }

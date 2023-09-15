@@ -57,7 +57,7 @@ import Albumes from "../../Components/AlbumesFav/AlbumesFav";
               <h2 className="Titulo">Canciones favoritas</h2>
                 <section className="section">
                   {this.state.canciones.length !== 0?
-                    this.state.canciones.map((elm, idx) => <Cantantes key={idx} nombre={elm.title} imagen={elm.album.cover}  artista={elm.artist.name} id={elm.id}/>)
+                    this.state.canciones.map((elm, idx) => <Cantantes key={idx} nombre={elm.title} imagen={elm.album.cover}  artista={elm.artist.name} id={elm.id} sacarFav={(id)=> this.actualizarStateCanciones(id)}/>)
                     :
                     <h2>No hay canciones en favoritos</h2>
                    
