@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import { Link } from "react-router-dom";
 import Cantantes from "../Canciones/Canciones";
 import Albumes from "../Albumes/Albumes";
 import './SeccionA.css'
@@ -32,16 +33,16 @@ class secciona extends Component{
         return(
             <section>
                 <h2 className="Titulo">Canciones más populares</h2>
-                {this.state.canciones.length !== 0?
+                
                 <section className="section">
-                        
-                        {this.state.canciones.map((elm, idx) => <Cantantes key={idx} nombre={elm.title} imagen={elm.album.cover}  artista={elm.artist.name} id={elm.id}/>)}
-    
-                        
-                </section>
+                {this.state.canciones.length !== 0?
+                    this.state.canciones.map((elm, idx) => <Cantantes key={idx} nombre={elm.title} imagen={elm.album.cover}  artista={elm.artist.name} id={elm.id}/>)
                 :
                 <h2>Cargando...</h2>
                 }
+                
+                </section>
+                <p><Link to='/verTodasCanciones' >VerTodasCanciones</Link></p>
                 <br/>
                 <h2 className="Titulo">Albumes más populares</h2>
                 <section className="section">
@@ -51,6 +52,7 @@ class secciona extends Component{
                         <h2>Cargando...</h2>
                     } 
                 </section>
+                <p><Link to='/verTodosAlbums' >Ver todos los albums</Link></p>
             </section>
         )
     }
