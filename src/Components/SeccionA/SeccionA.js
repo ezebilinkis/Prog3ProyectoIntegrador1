@@ -15,7 +15,6 @@ class secciona extends Component{
         }
     }
     componentDidMount(){
-        console.log('Monto');
         fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart')
         .then(res => res.json())
         .then( data => this.setState({

@@ -37,13 +37,14 @@ import Albumes from "../../Components/AlbumesFav/AlbumesFav";
       .catch(err => console.log(err))
     }
   }
-
+  //Saca al album del estado
   actualizarStateAlbumes(id){
     let stateActualizado = this.state.albums.filter(elm => elm.id !== id)
     this.setState({
       albums: stateActualizado
     })
   }
+  //Saca la cancion del estado
   actualizarStateCanciones(id){
     let stateActualizado = this.state.canciones.filter(elm => elm.id !== id)
     this.setState({

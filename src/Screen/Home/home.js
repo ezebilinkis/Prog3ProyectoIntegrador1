@@ -1,11 +1,16 @@
+//Importamos el objeto component de react
 import React, {Component} from "react"
 import Secciona from "../../Components/SeccionA/SeccionA"
 import Cantantes from "../../Components/Canciones/Canciones"
 import Albumes from "../../Components/Albumes/Albumes"
 
+//Creamos un componente con estado
 class Home extends Component{
+    //el constructor sirve para declarar el estado inicial y manejar las props
     constructor(){
+        //Funcion que sirve para utilizar las props que recibe del componente padre
         super()
+        //Declaramos el estado inicial
         this.state = {
             valor: '',
             albums: [],
@@ -13,14 +18,15 @@ class Home extends Component{
             buscar: true
         }
     }
-
+    //Metodo que actualiza el estado del valor 
     controlarCambios(event){
+        //Usamos this.setState para actualizar el estado del componente
         this.setState({
             valor: event.target.value
         } 
         )
     }
-
+    //Metodo para que se evite el envio del formulario, pero que se realice la busqueda
     evitarSubmit(event){
         if (this.state.valor !== '' ) {
             fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/search?q=${this.state.valor}`)
@@ -34,6 +40,7 @@ class Home extends Component{
             .catch(err => console.log(err))
             
         }
+        //Actualizamos el estado
         this.setState({
             buscar: false
         })
@@ -50,6 +57,7 @@ class Home extends Component{
                 <input type="submit" value='Submit' className="input"/>
             </form>
             <br/>
+            {/* If que chequea que el usuario haya buscado algo o no */}
             {this.state.buscar?
             <Secciona/>
             :
@@ -57,8 +65,9 @@ class Home extends Component{
                 <h2 className="Titulo">Canciones más populares</h2>
                 {this.state.canciones.length !== 0?
                 <section className="section">
-                        
+                        {/* Map recibe un callback, dos parametros: el primero representa cada elemento del array y el segundo es un indice */}
                         {this.state.canciones.map((elm, idx) => <Cantantes key={idx} nombre={elm.title} imagen={elm.album.cover}  artista={elm.artist.name} id={elm.id}/>)}
+
     
                         
                 </section>

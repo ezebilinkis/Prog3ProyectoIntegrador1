@@ -6,6 +6,7 @@ class detalleAlbum extends Component {
     constructor(props){
         super(props);
         this.state = {
+          // props.match.params.id nos trae el valor del parametro en la url
             id: props.match.params.id,
             album: '',
             props: props,
@@ -20,11 +21,14 @@ class detalleAlbum extends Component {
         .then( data => this.setState({
             album: data
         }, ()=> {
-
+          //Chequeamos si el album esta en favoritos
+            //este metodo trae el valor de la propiedad FavAlbums del localStorage, como un string
             let storageFav =  localStorage.getItem('FavAlbums')
+            //Lo pasamos a un tipo de dato JavaScript
             let arrParseado = JSON.parse(storageFav)
-    
+            
             if(arrParseado !== null){
+              
               let albumEsFav = arrParseado.includes(this.state.album.id)
     
               if(albumEsFav){
@@ -38,7 +42,7 @@ class detalleAlbum extends Component {
         .catch(e => console.log(e))
 
     }
-agregarAFavoritos(albumId){         //cambiar nombre de var
+agregarAFavoritos(albumId){         
     let storageFav = localStorage.getItem('FavAlbums')
       if(storageFav === null){
         let arrIds = [albumId]

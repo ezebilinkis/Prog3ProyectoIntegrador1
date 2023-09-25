@@ -15,7 +15,7 @@ class VerTodasCanciones extends Component{
         }
     }
     componentDidMount(){
-        console.log('Monto');
+        
         fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart?index=0&limit=10')
         .then(res => res.json())
         .then( data => this.setState({
@@ -25,13 +25,14 @@ class VerTodasCanciones extends Component{
         .catch(e => console.log(e))
     }
     componentDidUpdate(){
-
+        
     }
 
     cargarMas(){
         fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/chart?index=${this.state.index + 10}&limit=10`)
         .then(res => res.json())
         .then((data) =>{this.setState({
+            //Traemos nuevas canciones y las agregamos al array que ya teniamos, con el concat se agregan 10 canciones
             canciones: this.state.canciones.concat(data.tracks.data),
             backupB: this.state.backupB.concat(data.tracks.data),
             index: this.state.index + 20
