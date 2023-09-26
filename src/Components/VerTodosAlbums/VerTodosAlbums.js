@@ -1,9 +1,10 @@
+//Importamos los componentes
 import React, {Component} from "react"
 import Albumes from "../Albumes/Albumes";
 import Filtro from "../Filtro/Filtro";
 
+//Creamos el componente con estado
 class VerTodosAlbums extends Component{
-
     constructor(){
         super();
         this.state = {
@@ -12,6 +13,7 @@ class VerTodosAlbums extends Component{
             index:0
         }
     }
+//Despues del primer renderizado actualizamos los valores del estado
     componentDidMount(){
         console.log('Monto');
         fetch('https://api.allorigins.win/raw?url=https://api.deezer.com/chart?index=0&limit=10')
@@ -22,17 +24,14 @@ class VerTodosAlbums extends Component{
         }) )
         .catch(e => console.log(e))
     }
-    componentDidUpdate(){
-
-    }
-
+    //Traemos 10 elementos mas utilizando el index
     cargarMas(){
         fetch(`https://api.allorigins.win/raw?url=https://api.deezer.com/chart?index=${this.state.index + 10}&limit=10`)
         .then(res => res.json())
         .then((data) =>{this.setState({
             Albumes: this.state.Albumes.concat(data.albums.data),
             backup: this.state.backup.concat(data.albums.data),
-            index: this.state.index + 20
+            index: this.state.index + 10
         })})
         .catch(err => console.log(err))
     }
@@ -43,10 +42,6 @@ class VerTodosAlbums extends Component{
             Albumes: filtrado
         })
     }
-
-    
-
-    
     render(){
         return (
             <section>
