@@ -1,5 +1,7 @@
+//Importamos componentes
 import React, { Component } from "react";
 
+//Creamos el componente filtro y procesamos las props
 class Filtro extends Component{
     constructor(props){
         super(props);

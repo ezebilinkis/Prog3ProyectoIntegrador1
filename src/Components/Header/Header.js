@@ -1,7 +1,9 @@
+//Importamos componentes y css
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
 
+//Con Link creamos la barra de navegación para routear dentro de la aplicacion
 function Header() {
   return (
     <header>
@@ -20,4 +22,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Header;

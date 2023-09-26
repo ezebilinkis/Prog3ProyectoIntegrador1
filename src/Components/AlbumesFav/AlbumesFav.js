@@ -1,10 +1,10 @@
-// Album.js
+//Importamos componentes
 import './Albumes.css'
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
 
+//Creamos el componente y procesamos las props
 class Albumes extends Component {
-
     constructor(props){
         super(props);
         this.state = {
@@ -12,12 +12,10 @@ class Albumes extends Component {
             props: props,
         }
     }
-    
-    
     sacarDeFavoritos(albumId){ //eliminar valor que recibo como parametro
         let storageFav = localStorage.getItem('FavAlbums')
         let arrParseado = JSON.parse(storageFav)
-        let eliminarFavs = arrParseado.filter((id) => id !== albumId) // (solo me quedo con los Id distintos al que recibi como parametro)
+        let eliminarFavs = arrParseado.filter((id) => id !== albumId) //solo me quedo con los Id distintos al que recibi como parametro
         let arrStringificado = JSON.stringify(eliminarFavs)
         localStorage.setItem('FavAlbums', arrStringificado)
        this.state.props.sacarFav(albumId)
